@@ -98,7 +98,8 @@ export function DefaultTooltip({ title: _title }: Props) {
                             className={classNames(
                                 'inline-block w-1 rounded-lg leading-none bg-current'
                             )}
-                            style={{ color: s.color }}
+                            // style={{ color: s.color }}
+                            style={{ color: tailwindScale('cyan') }}
                             role="presentation"
                         >
                             &nbsp;

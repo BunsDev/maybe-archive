@@ -42,7 +42,12 @@ async function validateCredentials(credentials: any): Promise<z.infer<typeof aut
 
     const parsed = authSchema.safeParse(credentials)
     if (!parsed.success) {
-        throw new Error(parsed.error.issues.map((issue) => issue.message).join(', '))
+        throw new Error(
+            'failed to validate credentials'
+            // todo: provide a more detailed error message
+            // parsed.error.issues.map((issue) => issue.message).join(', ')
+        )
+        // throw new Error(parsed.error.issues.map((issue) => issue.message).join(', '))
     }
 
     return parsed.data
