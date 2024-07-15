@@ -14,6 +14,7 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
+        "verbatimModuleSyntax": true,
         "paths": {
             "@maybe-finance/client/features": ["libs/client/features/src/index.ts"],
             "@maybe-finance/client/shared": ["libs/client/shared/src/index.ts"],
