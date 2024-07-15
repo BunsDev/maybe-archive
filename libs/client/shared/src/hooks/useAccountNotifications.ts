@@ -14,7 +14,9 @@ export function useAccountNotifications() {
 
         if (
             accountsQuery.data.connections.some(
-                (connection) => connection.plaidNewAccountsAvailable
+                // todo: fix this condition
+                (connection) => connection.status
+                // (connection) => connection.plaidNewAccountsAvailable
             )
         ) {
             return 'update'
