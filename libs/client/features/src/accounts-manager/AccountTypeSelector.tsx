@@ -207,6 +207,7 @@ export default function AccountTypeSelector({
                                 onClick={() => {
                                     setAccountManager({
                                         view: 'add-stock',
+                                        // @ts-ignore
                                         defaultValues: { categoryUser: 'stock', name: 'Stock' },
                                     })
                                 }}
