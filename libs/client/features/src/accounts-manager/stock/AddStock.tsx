@@ -23,9 +23,17 @@ export function AddStock({ defaultValues }: { defaultValues: Partial<UpdateStock
                     stock: defaultValues.stock ?? '',
                     startDate: defaultValues.startDate ?? null,
                     originalBalance: defaultValues.originalBalance ?? null,
+                    currentBalance: defaultValues.currentBalance ?? null,
                     shares: defaultValues.shares ?? null,
                 }}
-                onSubmit={async ({ account_id, stock, startDate, originalBalance, shares }) => {
+                onSubmit={async ({
+                    account_id,
+                    stock,
+                    startDate,
+                    originalBalance,
+                    currentBalance,
+                    shares,
+                }) => {
                     // STOCKTODO : Figure out what all is required to create a stock account
                     await createAccount.mutateAsync({
                         // STOCKTODO : Change type based on whether you choose to go with the 'STOCK' type
@@ -39,7 +47,8 @@ export function AddStock({ defaultValues }: { defaultValues: Partial<UpdateStock
                             currentDate: DateTime.now().toISODate(),
                         },
                         // STOCKTODO : Change this according this to stock. this should be
-                        name: `${make} ${model}`,
+                        // name: `${make} ${model}`,
+                        name: `${stock}`,
                         startDate,
                     })
 

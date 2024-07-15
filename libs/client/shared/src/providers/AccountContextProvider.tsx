@@ -16,6 +16,7 @@ export type StockValuationFields = {
     startDate: string | null
     originalBalance: number | null
     shares: number | null
+    currentBalance?: number | null
 }
 
 type StockMetadataValues = {
