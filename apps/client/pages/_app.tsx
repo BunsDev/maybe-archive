@@ -12,7 +12,7 @@ import {
 import { AccountsManager, OnboardingGuard } from '@maybe-finance/client/features'
 import { AccountContextProvider } from '@maybe-finance/client/shared'
 import * as Sentry from '@sentry/react'
-import { BrowserTracing } from '@sentry/tracing'
+// import { BrowserTracing } from '@sentry/tracing'
 import env from '../env'
 import '../styles.css'
 import { SessionProvider, useSession } from 'next-auth/react'
@@ -23,11 +23,11 @@ import { useRouter } from 'next/router'
 Sentry.init({
     dsn: env.NEXT_PUBLIC_SENTRY_DSN,
     environment: env.NEXT_PUBLIC_SENTRY_ENV,
-    integrations: [
-        new BrowserTracing({
-            tracingOrigins: ['localhost', new URL(env.NEXT_PUBLIC_API_URL).hostname],
-        }),
-    ],
+    // integrations: [
+    //     new BrowserTracing({
+    //         tracingOrigins: ['localhost', new URL(env.NEXT_PUBLIC_API_URL).hostname],
+    //     }),
+    // ],
     tracesSampleRate: 0.6,
 })
 
